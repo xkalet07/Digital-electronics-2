@@ -1,0 +1,319 @@
+
+gpio.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  000001c4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000170  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  000001c4  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000001f4  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000070  00000000  00000000  00000230  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000a57  00000000  00000000  000002a0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000739  00000000  00000000  00000cf7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000065d  00000000  00000000  00001430  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000000a8  00000000  00000000  00001a90  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00006de4  00000000  00000000  00001b38  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000000da  00000000  00000000  0000891c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000050  00000000  00000000  000089f6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_macro  0000037f  00000000  00000000  00008a46  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	33 c0       	rjmp	.+102    	; 0x68 <__ctors_end>
+   2:	00 00       	nop
+   4:	39 c0       	rjmp	.+114    	; 0x78 <__bad_interrupt>
+   6:	00 00       	nop
+   8:	37 c0       	rjmp	.+110    	; 0x78 <__bad_interrupt>
+   a:	00 00       	nop
+   c:	35 c0       	rjmp	.+106    	; 0x78 <__bad_interrupt>
+   e:	00 00       	nop
+  10:	33 c0       	rjmp	.+102    	; 0x78 <__bad_interrupt>
+  12:	00 00       	nop
+  14:	31 c0       	rjmp	.+98     	; 0x78 <__bad_interrupt>
+  16:	00 00       	nop
+  18:	2f c0       	rjmp	.+94     	; 0x78 <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	2d c0       	rjmp	.+90     	; 0x78 <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	2b c0       	rjmp	.+86     	; 0x78 <__bad_interrupt>
+  22:	00 00       	nop
+  24:	29 c0       	rjmp	.+82     	; 0x78 <__bad_interrupt>
+  26:	00 00       	nop
+  28:	27 c0       	rjmp	.+78     	; 0x78 <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	25 c0       	rjmp	.+74     	; 0x78 <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	23 c0       	rjmp	.+70     	; 0x78 <__bad_interrupt>
+  32:	00 00       	nop
+  34:	21 c0       	rjmp	.+66     	; 0x78 <__bad_interrupt>
+  36:	00 00       	nop
+  38:	1f c0       	rjmp	.+62     	; 0x78 <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	1d c0       	rjmp	.+58     	; 0x78 <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	1b c0       	rjmp	.+54     	; 0x78 <__bad_interrupt>
+  42:	00 00       	nop
+  44:	19 c0       	rjmp	.+50     	; 0x78 <__bad_interrupt>
+  46:	00 00       	nop
+  48:	17 c0       	rjmp	.+46     	; 0x78 <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	15 c0       	rjmp	.+42     	; 0x78 <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	13 c0       	rjmp	.+38     	; 0x78 <__bad_interrupt>
+  52:	00 00       	nop
+  54:	11 c0       	rjmp	.+34     	; 0x78 <__bad_interrupt>
+  56:	00 00       	nop
+  58:	0f c0       	rjmp	.+30     	; 0x78 <__bad_interrupt>
+  5a:	00 00       	nop
+  5c:	0d c0       	rjmp	.+26     	; 0x78 <__bad_interrupt>
+  5e:	00 00       	nop
+  60:	0b c0       	rjmp	.+22     	; 0x78 <__bad_interrupt>
+  62:	00 00       	nop
+  64:	09 c0       	rjmp	.+18     	; 0x78 <__bad_interrupt>
+	...
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+  74:	4f d0       	rcall	.+158    	; 0x114 <main>
+  76:	7a c0       	rjmp	.+244    	; 0x16c <_exit>
+
+00000078 <__bad_interrupt>:
+  78:	c3 cf       	rjmp	.-122    	; 0x0 <__vectors>
+
+0000007a <GPIO_config_output>:
+//Configure one input pin in DDR without pull-up resistor
+void GPIO_config_input_nopull(volatile uint8_t *reg_name, uint8_t pin_num)
+{
+	*reg_name = *reg_name & ~(1<<pin_num);
+	*reg_name++;
+	*reg_name = *reg_name & ~(1<<pin_num);
+  7a:	fc 01       	movw	r30, r24
+  7c:	40 81       	ld	r20, Z
+  7e:	21 e0       	ldi	r18, 0x01	; 1
+  80:	30 e0       	ldi	r19, 0x00	; 0
+  82:	02 c0       	rjmp	.+4      	; 0x88 <GPIO_config_output+0xe>
+  84:	22 0f       	add	r18, r18
+  86:	33 1f       	adc	r19, r19
+  88:	6a 95       	dec	r22
+  8a:	e2 f7       	brpl	.-8      	; 0x84 <GPIO_config_output+0xa>
+  8c:	24 2b       	or	r18, r20
+  8e:	20 83       	st	Z, r18
+  90:	08 95       	ret
+
+00000092 <GPIO_config_input_pullup>:
+}
+
+/*--------------------------------------------------------------------*/
+//Configure one input pin in DDR and enable pull-up resistor
+void GPIO_config_input_pullup(volatile uint8_t *reg_name, uint8_t pin_num)
+{
+  92:	fc 01       	movw	r30, r24
+    *reg_name = *reg_name & ~(1<<pin_num);  // Data Direction Register
+  94:	80 81       	ld	r24, Z
+  96:	21 e0       	ldi	r18, 0x01	; 1
+  98:	30 e0       	ldi	r19, 0x00	; 0
+  9a:	02 c0       	rjmp	.+4      	; 0xa0 <GPIO_config_input_pullup+0xe>
+  9c:	22 0f       	add	r18, r18
+  9e:	33 1f       	adc	r19, r19
+  a0:	6a 95       	dec	r22
+  a2:	e2 f7       	brpl	.-8      	; 0x9c <GPIO_config_input_pullup+0xa>
+  a4:	92 2f       	mov	r25, r18
+  a6:	90 95       	com	r25
+  a8:	89 23       	and	r24, r25
+  aa:	80 83       	st	Z, r24
+    *reg_name++;                    // Change pointer to Data Register
+  ac:	80 81       	ld	r24, Z
+    *reg_name = *reg_name | (1<<pin_num);   // Data Register
+  ae:	81 81       	ldd	r24, Z+1	; 0x01
+  b0:	28 2b       	or	r18, r24
+  b2:	21 83       	std	Z+1, r18	; 0x01
+  b4:	08 95       	ret
+
+000000b6 <GPIO_write_low>:
+}
+
+/*--------------------------------------------------------------------*/
+//Set one output pin in PORT register to low
+void GPIO_write_low(volatile uint8_t *reg_name, uint8_t pin_num)
+{
+  b6:	fc 01       	movw	r30, r24
+    *reg_name = *reg_name & ~(1<<pin_num);
+  b8:	90 81       	ld	r25, Z
+  ba:	21 e0       	ldi	r18, 0x01	; 1
+  bc:	30 e0       	ldi	r19, 0x00	; 0
+  be:	02 c0       	rjmp	.+4      	; 0xc4 <GPIO_write_low+0xe>
+  c0:	22 0f       	add	r18, r18
+  c2:	33 1f       	adc	r19, r19
+  c4:	6a 95       	dec	r22
+  c6:	e2 f7       	brpl	.-8      	; 0xc0 <GPIO_write_low+0xa>
+  c8:	20 95       	com	r18
+  ca:	29 23       	and	r18, r25
+  cc:	20 83       	st	Z, r18
+  ce:	08 95       	ret
+
+000000d0 <GPIO_write_high>:
+/*--------------------------------------------------------------------*/
+/* GPIO_write_high */
+//Set one output pin in PORT register to high
+void GPIO_write_high(volatile uint8_t *reg_name, uint8_t pin_num)
+{
+	*reg_name = *reg_name | (1<<pin_num);
+  d0:	fc 01       	movw	r30, r24
+  d2:	40 81       	ld	r20, Z
+  d4:	21 e0       	ldi	r18, 0x01	; 1
+  d6:	30 e0       	ldi	r19, 0x00	; 0
+  d8:	02 c0       	rjmp	.+4      	; 0xde <GPIO_write_high+0xe>
+  da:	22 0f       	add	r18, r18
+  dc:	33 1f       	adc	r19, r19
+  de:	6a 95       	dec	r22
+  e0:	e2 f7       	brpl	.-8      	; 0xda <GPIO_write_high+0xa>
+  e2:	24 2b       	or	r18, r20
+  e4:	20 83       	st	Z, r18
+  e6:	08 95       	ret
+
+000000e8 <GPIO_toggle>:
+/*--------------------------------------------------------------------*/
+/* GPIO_toggle */
+//Toggle one output pin value in PORT register
+void GPIO_toggle(volatile uint8_t *reg_name, uint8_t pin_num)
+{
+	*reg_name = *reg_name ^ (1<<pin_num);
+  e8:	fc 01       	movw	r30, r24
+  ea:	40 81       	ld	r20, Z
+  ec:	21 e0       	ldi	r18, 0x01	; 1
+  ee:	30 e0       	ldi	r19, 0x00	; 0
+  f0:	02 c0       	rjmp	.+4      	; 0xf6 <GPIO_toggle+0xe>
+  f2:	22 0f       	add	r18, r18
+  f4:	33 1f       	adc	r19, r19
+  f6:	6a 95       	dec	r22
+  f8:	e2 f7       	brpl	.-8      	; 0xf2 <GPIO_toggle+0xa>
+  fa:	24 27       	eor	r18, r20
+  fc:	20 83       	st	Z, r18
+  fe:	08 95       	ret
+
+00000100 <GPIO_read>:
+/*--------------------------------------------------------------------*/
+/* GPIO_read */
+//Get input pin value from PIN register
+uint8_t GPIO_read(volatile uint8_t *reg_name, uint8_t pin_num)
+{
+	if(bit_is_clear(*reg_name, pin_num))
+ 100:	fc 01       	movw	r30, r24
+ 102:	80 81       	ld	r24, Z
+ 104:	90 e0       	ldi	r25, 0x00	; 0
+ 106:	02 c0       	rjmp	.+4      	; 0x10c <GPIO_read+0xc>
+ 108:	95 95       	asr	r25
+ 10a:	87 95       	ror	r24
+ 10c:	6a 95       	dec	r22
+ 10e:	e2 f7       	brpl	.-8      	; 0x108 <GPIO_read+0x8>
+	else
+	{
+		return 1;
+	}
+	
+}
+ 110:	81 70       	andi	r24, 0x01	; 1
+ 112:	08 95       	ret
+
+00000114 <main>:
+ * library is used instead of low-level logic operations.
+ */
+int main(void)
+{
+    /* GREEN LED */
+    GPIO_config_output(&DDRB, LED_GREEN);
+ 114:	65 e0       	ldi	r22, 0x05	; 5
+ 116:	84 e2       	ldi	r24, 0x24	; 36
+ 118:	90 e0       	ldi	r25, 0x00	; 0
+ 11a:	af df       	rcall	.-162    	; 0x7a <GPIO_config_output>
+    GPIO_write_low(&PORTB, LED_GREEN);
+ 11c:	65 e0       	ldi	r22, 0x05	; 5
+ 11e:	85 e2       	ldi	r24, 0x25	; 37
+ 120:	90 e0       	ldi	r25, 0x00	; 0
+ 122:	c9 df       	rcall	.-110    	; 0xb6 <GPIO_write_low>
+
+    /* RED LED */
+    // WRITE YOUR CODE HERE
+	    GPIO_config_output(&DDRC, LED_RED);
+ 124:	60 e0       	ldi	r22, 0x00	; 0
+ 126:	87 e2       	ldi	r24, 0x27	; 39
+ 128:	90 e0       	ldi	r25, 0x00	; 0
+ 12a:	a7 df       	rcall	.-178    	; 0x7a <GPIO_config_output>
+	    GPIO_write_high(&PORTC, LED_RED);
+ 12c:	60 e0       	ldi	r22, 0x00	; 0
+ 12e:	88 e2       	ldi	r24, 0x28	; 40
+ 130:	90 e0       	ldi	r25, 0x00	; 0
+ 132:	ce df       	rcall	.-100    	; 0xd0 <GPIO_write_high>
+	
+
+    /* push button */
+    // WRITE YOUR CODE HERE
+	GPIO_config_input_pullup(&DDRD, BTN);
+ 134:	60 e0       	ldi	r22, 0x00	; 0
+ 136:	8a e2       	ldi	r24, 0x2A	; 42
+ 138:	90 e0       	ldi	r25, 0x00	; 0
+ 13a:	ab df       	rcall	.-170    	; 0x92 <GPIO_config_input_pullup>
+ 13c:	2f ef       	ldi	r18, 0xFF	; 255
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 13e:	89 e6       	ldi	r24, 0x69	; 105
+ 140:	98 e1       	ldi	r25, 0x18	; 24
+ 142:	21 50       	subi	r18, 0x01	; 1
+ 144:	80 40       	sbci	r24, 0x00	; 0
+ 146:	90 40       	sbci	r25, 0x00	; 0
+ 148:	e1 f7       	brne	.-8      	; 0x142 <main+0x2e>
+ 14a:	00 c0       	rjmp	.+0      	; 0x14c <main+0x38>
+ 14c:	00 00       	nop
+    while (1)
+    {
+        // Pause several milliseconds
+        _delay_ms(BLINK_DELAY);
+		
+		if(!GPIO_read(&PIND,BTN))
+ 14e:	60 e0       	ldi	r22, 0x00	; 0
+ 150:	89 e2       	ldi	r24, 0x29	; 41
+ 152:	90 e0       	ldi	r25, 0x00	; 0
+ 154:	d5 df       	rcall	.-86     	; 0x100 <GPIO_read>
+ 156:	81 11       	cpse	r24, r1
+ 158:	f1 cf       	rjmp	.-30     	; 0x13c <main+0x28>
+		{
+			GPIO_toggle(&PORTB,LED_GREEN);
+ 15a:	65 e0       	ldi	r22, 0x05	; 5
+ 15c:	85 e2       	ldi	r24, 0x25	; 37
+ 15e:	90 e0       	ldi	r25, 0x00	; 0
+ 160:	c3 df       	rcall	.-122    	; 0xe8 <GPIO_toggle>
+			GPIO_toggle(&PORTC,LED_RED);
+ 162:	60 e0       	ldi	r22, 0x00	; 0
+ 164:	88 e2       	ldi	r24, 0x28	; 40
+ 166:	90 e0       	ldi	r25, 0x00	; 0
+ 168:	bf df       	rcall	.-130    	; 0xe8 <GPIO_toggle>
+ 16a:	e8 cf       	rjmp	.-48     	; 0x13c <main+0x28>
+
+0000016c <_exit>:
+ 16c:	f8 94       	cli
+
+0000016e <__stop_program>:
+ 16e:	ff cf       	rjmp	.-2      	; 0x16e <__stop_program>
