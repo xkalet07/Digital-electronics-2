@@ -252,13 +252,12 @@ int main(void)
  122:	c9 df       	rcall	.-110    	; 0xb6 <GPIO_write_low>
 
     /* RED LED */
-    // WRITE YOUR CODE HERE
-	    GPIO_config_output(&DDRC, LED_RED);
+	GPIO_config_output(&DDRC, LED_RED);
  124:	60 e0       	ldi	r22, 0x00	; 0
  126:	87 e2       	ldi	r24, 0x27	; 39
  128:	90 e0       	ldi	r25, 0x00	; 0
  12a:	a7 df       	rcall	.-178    	; 0x7a <GPIO_config_output>
-	    GPIO_write_high(&PORTC, LED_RED);
+	GPIO_write_high(&PORTC, LED_RED);
  12c:	60 e0       	ldi	r22, 0x00	; 0
  12e:	88 e2       	ldi	r24, 0x28	; 40
  130:	90 e0       	ldi	r25, 0x00	; 0
@@ -266,7 +265,6 @@ int main(void)
 	
 
     /* push button */
-    // WRITE YOUR CODE HERE
 	GPIO_config_input_pullup(&DDRD, BTN);
  134:	60 e0       	ldi	r22, 0x00	; 0
  136:	8a e2       	ldi	r24, 0x2A	; 42

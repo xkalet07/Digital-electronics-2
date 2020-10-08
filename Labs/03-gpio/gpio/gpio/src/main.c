@@ -37,13 +37,11 @@ int main(void)
     GPIO_write_low(&PORTB, LED_GREEN);
 
     /* RED LED */
-    // WRITE YOUR CODE HERE
-	    GPIO_config_output(&DDRC, LED_RED);
-	    GPIO_write_high(&PORTC, LED_RED);
+	GPIO_config_output(&DDRC, LED_RED);
+	GPIO_write_high(&PORTC, LED_RED);
 	
 
     /* push button */
-    // WRITE YOUR CODE HERE
 	GPIO_config_input_pullup(&DDRD, BTN);
 	
 
@@ -58,8 +56,6 @@ int main(void)
 			GPIO_toggle(&PORTB,LED_GREEN);
 			GPIO_toggle(&PORTC,LED_RED);
 		}
-
-        // WRITE YOUR CODE HERE
     }
 
     // Will never reach this
