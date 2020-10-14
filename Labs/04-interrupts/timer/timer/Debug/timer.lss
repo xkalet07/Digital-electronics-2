@@ -1,0 +1,499 @@
+
+timer.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  0000032e  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000002da  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  0000032e  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000360  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000088  00000000  00000000  0000039c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000b48  00000000  00000000  00000424  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000074d  00000000  00000000  00000f6c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000415  00000000  00000000  000016b9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000001b0  00000000  00000000  00001ad0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000045f  00000000  00000000  00001c80  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000033b  00000000  00000000  000020df  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000068  00000000  00000000  0000241a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+   8:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+   c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  10:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  14:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  18:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  1c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  20:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  24:	0c 94 44 01 	jmp	0x288	; 0x288 <__vector_9>
+  28:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  2c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  30:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  34:	0c 94 1d 01 	jmp	0x23a	; 0x23a <__vector_13>
+  38:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  3c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  40:	0c 94 f6 00 	jmp	0x1ec	; 0x1ec <__vector_16>
+  44:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  48:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  4c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  50:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  54:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  58:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  5c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  60:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  64:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+  74:	0e 94 8d 00 	call	0x11a	; 0x11a <main>
+  78:	0c 94 6b 01 	jmp	0x2d6	; 0x2d6 <_exit>
+
+0000007c <__bad_interrupt>:
+  7c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000080 <GPIO_config_output>:
+//Configure one input pin in DDR without pull-up resistor
+void GPIO_config_input_nopull(volatile uint8_t *reg_name, uint8_t pin_num)
+{
+	*reg_name = *reg_name & ~(1<<pin_num);
+	*reg_name++;
+	*reg_name = *reg_name & ~(1<<pin_num);
+  80:	fc 01       	movw	r30, r24
+  82:	40 81       	ld	r20, Z
+  84:	21 e0       	ldi	r18, 0x01	; 1
+  86:	30 e0       	ldi	r19, 0x00	; 0
+  88:	02 c0       	rjmp	.+4      	; 0x8e <GPIO_config_output+0xe>
+  8a:	22 0f       	add	r18, r18
+  8c:	33 1f       	adc	r19, r19
+  8e:	6a 95       	dec	r22
+  90:	e2 f7       	brpl	.-8      	; 0x8a <GPIO_config_output+0xa>
+  92:	24 2b       	or	r18, r20
+  94:	20 83       	st	Z, r18
+  96:	08 95       	ret
+
+00000098 <GPIO_config_input_pullup>:
+}
+
+/*--------------------------------------------------------------------*/
+//Configure one input pin in DDR and enable pull-up resistor
+void GPIO_config_input_pullup(volatile uint8_t *reg_name, uint8_t pin_num)
+{
+  98:	fc 01       	movw	r30, r24
+    *reg_name = *reg_name & ~(1<<pin_num);  // Data Direction Register
+  9a:	80 81       	ld	r24, Z
+  9c:	21 e0       	ldi	r18, 0x01	; 1
+  9e:	30 e0       	ldi	r19, 0x00	; 0
+  a0:	02 c0       	rjmp	.+4      	; 0xa6 <GPIO_config_input_pullup+0xe>
+  a2:	22 0f       	add	r18, r18
+  a4:	33 1f       	adc	r19, r19
+  a6:	6a 95       	dec	r22
+  a8:	e2 f7       	brpl	.-8      	; 0xa2 <GPIO_config_input_pullup+0xa>
+  aa:	92 2f       	mov	r25, r18
+  ac:	90 95       	com	r25
+  ae:	89 23       	and	r24, r25
+  b0:	80 83       	st	Z, r24
+    *reg_name++;                    // Change pointer to Data Register
+  b2:	80 81       	ld	r24, Z
+    *reg_name = *reg_name | (1<<pin_num);   // Data Register
+  b4:	81 81       	ldd	r24, Z+1	; 0x01
+  b6:	28 2b       	or	r18, r24
+  b8:	21 83       	std	Z+1, r18	; 0x01
+  ba:	08 95       	ret
+
+000000bc <GPIO_write_low>:
+}
+
+/*--------------------------------------------------------------------*/
+//Set one output pin in PORT register to low
+void GPIO_write_low(volatile uint8_t *reg_name, uint8_t pin_num)
+{
+  bc:	fc 01       	movw	r30, r24
+    *reg_name = *reg_name & ~(1<<pin_num);
+  be:	90 81       	ld	r25, Z
+  c0:	21 e0       	ldi	r18, 0x01	; 1
+  c2:	30 e0       	ldi	r19, 0x00	; 0
+  c4:	02 c0       	rjmp	.+4      	; 0xca <GPIO_write_low+0xe>
+  c6:	22 0f       	add	r18, r18
+  c8:	33 1f       	adc	r19, r19
+  ca:	6a 95       	dec	r22
+  cc:	e2 f7       	brpl	.-8      	; 0xc6 <GPIO_write_low+0xa>
+  ce:	20 95       	com	r18
+  d0:	29 23       	and	r18, r25
+  d2:	20 83       	st	Z, r18
+  d4:	08 95       	ret
+
+000000d6 <GPIO_write_high>:
+/*--------------------------------------------------------------------*/
+/* GPIO_write_high */
+//Set one output pin in PORT register to high
+void GPIO_write_high(volatile uint8_t *reg_name, uint8_t pin_num)
+{
+	*reg_name = *reg_name | (1<<pin_num);
+  d6:	fc 01       	movw	r30, r24
+  d8:	40 81       	ld	r20, Z
+  da:	21 e0       	ldi	r18, 0x01	; 1
+  dc:	30 e0       	ldi	r19, 0x00	; 0
+  de:	02 c0       	rjmp	.+4      	; 0xe4 <GPIO_write_high+0xe>
+  e0:	22 0f       	add	r18, r18
+  e2:	33 1f       	adc	r19, r19
+  e4:	6a 95       	dec	r22
+  e6:	e2 f7       	brpl	.-8      	; 0xe0 <GPIO_write_high+0xa>
+  e8:	24 2b       	or	r18, r20
+  ea:	20 83       	st	Z, r18
+  ec:	08 95       	ret
+
+000000ee <GPIO_toggle>:
+/*--------------------------------------------------------------------*/
+/* GPIO_toggle */
+//Toggle one output pin value in PORT register
+void GPIO_toggle(volatile uint8_t *reg_name, uint8_t pin_num)
+{
+	*reg_name = *reg_name ^ (1<<pin_num);
+  ee:	fc 01       	movw	r30, r24
+  f0:	40 81       	ld	r20, Z
+  f2:	21 e0       	ldi	r18, 0x01	; 1
+  f4:	30 e0       	ldi	r19, 0x00	; 0
+  f6:	02 c0       	rjmp	.+4      	; 0xfc <GPIO_toggle+0xe>
+  f8:	22 0f       	add	r18, r18
+  fa:	33 1f       	adc	r19, r19
+  fc:	6a 95       	dec	r22
+  fe:	e2 f7       	brpl	.-8      	; 0xf8 <GPIO_toggle+0xa>
+ 100:	24 27       	eor	r18, r20
+ 102:	20 83       	st	Z, r18
+ 104:	08 95       	ret
+
+00000106 <GPIO_read>:
+/*--------------------------------------------------------------------*/
+/* GPIO_read */
+//Get input pin value from PIN register
+uint8_t GPIO_read(volatile uint8_t *reg_name, uint8_t pin_num)
+{
+	if(bit_is_clear(*reg_name, pin_num))
+ 106:	fc 01       	movw	r30, r24
+ 108:	80 81       	ld	r24, Z
+ 10a:	90 e0       	ldi	r25, 0x00	; 0
+ 10c:	02 c0       	rjmp	.+4      	; 0x112 <GPIO_read+0xc>
+ 10e:	95 95       	asr	r25
+ 110:	87 95       	ror	r24
+ 112:	6a 95       	dec	r22
+ 114:	e2 f7       	brpl	.-8      	; 0x10e <GPIO_read+0x8>
+	else
+	{
+		return 1;
+	}
+	
+}
+ 116:	81 70       	andi	r24, 0x01	; 1
+ 118:	08 95       	ret
+
+0000011a <main>:
+ * on Multi-function shield with internal 8- and 16-bit timer modules.
+ */
+int main(void)
+{
+    /* Configuration of three LEDs */
+    GPIO_config_output(&DDRB, LED_D1);
+ 11a:	65 e0       	ldi	r22, 0x05	; 5
+ 11c:	84 e2       	ldi	r24, 0x24	; 36
+ 11e:	90 e0       	ldi	r25, 0x00	; 0
+ 120:	0e 94 40 00 	call	0x80	; 0x80 <GPIO_config_output>
+    GPIO_write_low(&PORTB, LED_D1);
+ 124:	65 e0       	ldi	r22, 0x05	; 5
+ 126:	85 e2       	ldi	r24, 0x25	; 37
+ 128:	90 e0       	ldi	r25, 0x00	; 0
+ 12a:	0e 94 5e 00 	call	0xbc	; 0xbc <GPIO_write_low>
+	
+    GPIO_config_output(&DDRB, LED_D2);
+ 12e:	64 e0       	ldi	r22, 0x04	; 4
+ 130:	84 e2       	ldi	r24, 0x24	; 36
+ 132:	90 e0       	ldi	r25, 0x00	; 0
+ 134:	0e 94 40 00 	call	0x80	; 0x80 <GPIO_config_output>
+    GPIO_write_low(&PORTB, LED_D2);
+ 138:	64 e0       	ldi	r22, 0x04	; 4
+ 13a:	85 e2       	ldi	r24, 0x25	; 37
+ 13c:	90 e0       	ldi	r25, 0x00	; 0
+ 13e:	0e 94 5e 00 	call	0xbc	; 0xbc <GPIO_write_low>
+	
+    GPIO_config_output(&DDRB, LED_D3);
+ 142:	63 e0       	ldi	r22, 0x03	; 3
+ 144:	84 e2       	ldi	r24, 0x24	; 36
+ 146:	90 e0       	ldi	r25, 0x00	; 0
+ 148:	0e 94 40 00 	call	0x80	; 0x80 <GPIO_config_output>
+    GPIO_write_low(&PORTB, LED_D3);		
+ 14c:	63 e0       	ldi	r22, 0x03	; 3
+ 14e:	85 e2       	ldi	r24, 0x25	; 37
+ 150:	90 e0       	ldi	r25, 0x00	; 0
+ 152:	0e 94 5e 00 	call	0xbc	; 0xbc <GPIO_write_low>
+	
+    /* RED LED */
+    GPIO_config_output(&DDRC, LED_RED);
+ 156:	60 e0       	ldi	r22, 0x00	; 0
+ 158:	87 e2       	ldi	r24, 0x27	; 39
+ 15a:	90 e0       	ldi	r25, 0x00	; 0
+ 15c:	0e 94 40 00 	call	0x80	; 0x80 <GPIO_config_output>
+    GPIO_write_high(&PORTC, LED_RED);	
+ 160:	60 e0       	ldi	r22, 0x00	; 0
+ 162:	88 e2       	ldi	r24, 0x28	; 40
+ 164:	90 e0       	ldi	r25, 0x00	; 0
+ 166:	0e 94 6b 00 	call	0xd6	; 0xd6 <GPIO_write_high>
+	/* push button */
+	GPIO_config_input_pullup(&DDRD, BTN);
+ 16a:	60 e0       	ldi	r22, 0x00	; 0
+ 16c:	8a e2       	ldi	r24, 0x2A	; 42
+ 16e:	90 e0       	ldi	r25, 0x00	; 0
+ 170:	0e 94 4c 00 	call	0x98	; 0x98 <GPIO_config_input_pullup>
+
+    /* Configuration of 8-bit Timer/Counter0 */
+    TIM0_overflow_16ms();
+ 174:	85 b5       	in	r24, 0x25	; 37
+ 176:	8d 7f       	andi	r24, 0xFD	; 253
+ 178:	85 bd       	out	0x25, r24	; 37
+ 17a:	85 b5       	in	r24, 0x25	; 37
+ 17c:	85 60       	ori	r24, 0x05	; 5
+ 17e:	85 bd       	out	0x25, r24	; 37
+    TIM0_overflow_interrupt_enable();
+ 180:	ee e6       	ldi	r30, 0x6E	; 110
+ 182:	f0 e0       	ldi	r31, 0x00	; 0
+ 184:	80 81       	ld	r24, Z
+ 186:	81 60       	ori	r24, 0x01	; 1
+ 188:	80 83       	st	Z, r24
+
+    /* Configuration of 16-bit Timer/Counter1
+     * Set prescaler and enable overflow interrupt */
+    TIM1_overflow_262ms();
+ 18a:	e1 e8       	ldi	r30, 0x81	; 129
+ 18c:	f0 e0       	ldi	r31, 0x00	; 0
+ 18e:	80 81       	ld	r24, Z
+ 190:	8b 7f       	andi	r24, 0xFB	; 251
+ 192:	80 83       	st	Z, r24
+ 194:	80 81       	ld	r24, Z
+ 196:	83 60       	ori	r24, 0x03	; 3
+ 198:	80 83       	st	Z, r24
+    TIM1_overflow_interrupt_enable();
+ 19a:	ef e6       	ldi	r30, 0x6F	; 111
+ 19c:	f0 e0       	ldi	r31, 0x00	; 0
+ 19e:	80 81       	ld	r24, Z
+ 1a0:	81 60       	ori	r24, 0x01	; 1
+ 1a2:	80 83       	st	Z, r24
+
+    /* Configuration of 8-bit Timer/Counter2 */
+    TIM2_overflow_4ms();
+ 1a4:	e1 eb       	ldi	r30, 0xB1	; 177
+ 1a6:	f0 e0       	ldi	r31, 0x00	; 0
+ 1a8:	80 81       	ld	r24, Z
+ 1aa:	8c 7f       	andi	r24, 0xFC	; 252
+ 1ac:	80 83       	st	Z, r24
+ 1ae:	80 81       	ld	r24, Z
+ 1b0:	84 60       	ori	r24, 0x04	; 4
+ 1b2:	80 83       	st	Z, r24
+    TIM2_overflow_interrupt_enable();
+ 1b4:	e0 e7       	ldi	r30, 0x70	; 112
+ 1b6:	f0 e0       	ldi	r31, 0x00	; 0
+ 1b8:	80 81       	ld	r24, Z
+ 1ba:	81 60       	ori	r24, 0x01	; 1
+ 1bc:	80 83       	st	Z, r24
+
+    // Enables interrupts by setting the global interrupt mask
+    sei();
+ 1be:	78 94       	sei
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 1c0:	2f ef       	ldi	r18, 0xFF	; 255
+ 1c2:	89 e6       	ldi	r24, 0x69	; 105
+ 1c4:	98 e1       	ldi	r25, 0x18	; 24
+ 1c6:	21 50       	subi	r18, 0x01	; 1
+ 1c8:	80 40       	sbci	r24, 0x00	; 0
+ 1ca:	90 40       	sbci	r25, 0x00	; 0
+ 1cc:	e1 f7       	brne	.-8      	; 0x1c6 <main+0xac>
+ 1ce:	00 c0       	rjmp	.+0      	; 0x1d0 <main+0xb6>
+ 1d0:	00 00       	nop
+        /* Empty loop. All subsequent operations are performed exclusively 
+         * inside interrupt service routines ISRs */
+            // Pause several milliseconds
+        _delay_ms(BLINK_DELAY);
+        
+        if(!GPIO_read(&PIND,BTN))
+ 1d2:	60 e0       	ldi	r22, 0x00	; 0
+ 1d4:	89 e2       	ldi	r24, 0x29	; 41
+ 1d6:	90 e0       	ldi	r25, 0x00	; 0
+ 1d8:	0e 94 83 00 	call	0x106	; 0x106 <GPIO_read>
+ 1dc:	81 11       	cpse	r24, r1
+ 1de:	f0 cf       	rjmp	.-32     	; 0x1c0 <main+0xa6>
+        {
+	        GPIO_toggle(&PORTC,LED_RED);
+ 1e0:	60 e0       	ldi	r22, 0x00	; 0
+ 1e2:	88 e2       	ldi	r24, 0x28	; 40
+ 1e4:	90 e0       	ldi	r25, 0x00	; 0
+ 1e6:	0e 94 77 00 	call	0xee	; 0xee <GPIO_toggle>
+ 1ea:	ea cf       	rjmp	.-44     	; 0x1c0 <main+0xa6>
+
+000001ec <__vector_16>:
+/* Interrupt service routines ----------------------------------------*/
+/**
+ * ISR starts when Timer/Counter0 overflows. Toggle LED D1 on 
+ * Multi-function shield. */
+ISR(TIMER0_OVF_vect)
+{
+ 1ec:	1f 92       	push	r1
+ 1ee:	0f 92       	push	r0
+ 1f0:	0f b6       	in	r0, 0x3f	; 63
+ 1f2:	0f 92       	push	r0
+ 1f4:	11 24       	eor	r1, r1
+ 1f6:	2f 93       	push	r18
+ 1f8:	3f 93       	push	r19
+ 1fa:	4f 93       	push	r20
+ 1fc:	5f 93       	push	r21
+ 1fe:	6f 93       	push	r22
+ 200:	7f 93       	push	r23
+ 202:	8f 93       	push	r24
+ 204:	9f 93       	push	r25
+ 206:	af 93       	push	r26
+ 208:	bf 93       	push	r27
+ 20a:	ef 93       	push	r30
+ 20c:	ff 93       	push	r31
+    GPIO_toggle(&PORTB, LED_D1);
+ 20e:	65 e0       	ldi	r22, 0x05	; 5
+ 210:	85 e2       	ldi	r24, 0x25	; 37
+ 212:	90 e0       	ldi	r25, 0x00	; 0
+ 214:	0e 94 77 00 	call	0xee	; 0xee <GPIO_toggle>
+}
+ 218:	ff 91       	pop	r31
+ 21a:	ef 91       	pop	r30
+ 21c:	bf 91       	pop	r27
+ 21e:	af 91       	pop	r26
+ 220:	9f 91       	pop	r25
+ 222:	8f 91       	pop	r24
+ 224:	7f 91       	pop	r23
+ 226:	6f 91       	pop	r22
+ 228:	5f 91       	pop	r21
+ 22a:	4f 91       	pop	r20
+ 22c:	3f 91       	pop	r19
+ 22e:	2f 91       	pop	r18
+ 230:	0f 90       	pop	r0
+ 232:	0f be       	out	0x3f, r0	; 63
+ 234:	0f 90       	pop	r0
+ 236:	1f 90       	pop	r1
+ 238:	18 95       	reti
+
+0000023a <__vector_13>:
+/**
+ * ISR starts when Timer/Counter1 overflows. Toggle LED D2 on 
+ * Multi-function shield. */
+ISR(TIMER1_OVF_vect)
+{
+ 23a:	1f 92       	push	r1
+ 23c:	0f 92       	push	r0
+ 23e:	0f b6       	in	r0, 0x3f	; 63
+ 240:	0f 92       	push	r0
+ 242:	11 24       	eor	r1, r1
+ 244:	2f 93       	push	r18
+ 246:	3f 93       	push	r19
+ 248:	4f 93       	push	r20
+ 24a:	5f 93       	push	r21
+ 24c:	6f 93       	push	r22
+ 24e:	7f 93       	push	r23
+ 250:	8f 93       	push	r24
+ 252:	9f 93       	push	r25
+ 254:	af 93       	push	r26
+ 256:	bf 93       	push	r27
+ 258:	ef 93       	push	r30
+ 25a:	ff 93       	push	r31
+    GPIO_toggle(&PORTB, LED_D2);
+ 25c:	64 e0       	ldi	r22, 0x04	; 4
+ 25e:	85 e2       	ldi	r24, 0x25	; 37
+ 260:	90 e0       	ldi	r25, 0x00	; 0
+ 262:	0e 94 77 00 	call	0xee	; 0xee <GPIO_toggle>
+}
+ 266:	ff 91       	pop	r31
+ 268:	ef 91       	pop	r30
+ 26a:	bf 91       	pop	r27
+ 26c:	af 91       	pop	r26
+ 26e:	9f 91       	pop	r25
+ 270:	8f 91       	pop	r24
+ 272:	7f 91       	pop	r23
+ 274:	6f 91       	pop	r22
+ 276:	5f 91       	pop	r21
+ 278:	4f 91       	pop	r20
+ 27a:	3f 91       	pop	r19
+ 27c:	2f 91       	pop	r18
+ 27e:	0f 90       	pop	r0
+ 280:	0f be       	out	0x3f, r0	; 63
+ 282:	0f 90       	pop	r0
+ 284:	1f 90       	pop	r1
+ 286:	18 95       	reti
+
+00000288 <__vector_9>:
+/**
+ * ISR starts when Timer/Counter2 overflows. Toggle LED D3 on 
+ * Multi-function shield. */
+ISR(TIMER2_OVF_vect)
+{
+ 288:	1f 92       	push	r1
+ 28a:	0f 92       	push	r0
+ 28c:	0f b6       	in	r0, 0x3f	; 63
+ 28e:	0f 92       	push	r0
+ 290:	11 24       	eor	r1, r1
+ 292:	2f 93       	push	r18
+ 294:	3f 93       	push	r19
+ 296:	4f 93       	push	r20
+ 298:	5f 93       	push	r21
+ 29a:	6f 93       	push	r22
+ 29c:	7f 93       	push	r23
+ 29e:	8f 93       	push	r24
+ 2a0:	9f 93       	push	r25
+ 2a2:	af 93       	push	r26
+ 2a4:	bf 93       	push	r27
+ 2a6:	ef 93       	push	r30
+ 2a8:	ff 93       	push	r31
+    GPIO_toggle(&PORTB, LED_D3);
+ 2aa:	63 e0       	ldi	r22, 0x03	; 3
+ 2ac:	85 e2       	ldi	r24, 0x25	; 37
+ 2ae:	90 e0       	ldi	r25, 0x00	; 0
+ 2b0:	0e 94 77 00 	call	0xee	; 0xee <GPIO_toggle>
+ 2b4:	ff 91       	pop	r31
+ 2b6:	ef 91       	pop	r30
+ 2b8:	bf 91       	pop	r27
+ 2ba:	af 91       	pop	r26
+ 2bc:	9f 91       	pop	r25
+ 2be:	8f 91       	pop	r24
+ 2c0:	7f 91       	pop	r23
+ 2c2:	6f 91       	pop	r22
+ 2c4:	5f 91       	pop	r21
+ 2c6:	4f 91       	pop	r20
+ 2c8:	3f 91       	pop	r19
+ 2ca:	2f 91       	pop	r18
+ 2cc:	0f 90       	pop	r0
+ 2ce:	0f be       	out	0x3f, r0	; 63
+ 2d0:	0f 90       	pop	r0
+ 2d2:	1f 90       	pop	r1
+ 2d4:	18 95       	reti
+
+000002d6 <_exit>:
+ 2d6:	f8 94       	cli
+
+000002d8 <__stop_program>:
+ 2d8:	ff cf       	rjmp	.-2      	; 0x2d8 <__stop_program>
