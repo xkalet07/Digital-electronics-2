@@ -1,0 +1,123 @@
+<circuit noLinAcc="5" reactStep="50" animate="0" speed="1000000" type="simulide_0.4">
+ 
+Node-30: 
+<item labely="-24" vflip="1" itemtype="Node" hflip="1" x="-404" labelrot="0" y="-316" valLabely="0" objectName="Node-30" id="Node-30" rotation="0" valLabRot="0" labelx="-16" Show_id="false" valLabelx="0"/>
+ 
+Node-26: 
+<item labely="-24" vflip="1" itemtype="Node" hflip="1" x="-492" labelrot="0" y="-140" valLabely="0" objectName="Node-26" id="Node-26" rotation="0" valLabRot="0" labelx="-16" Show_id="false" valLabelx="0"/>
+ 
+Node-22: 
+<item labely="-24" vflip="1" itemtype="Node" hflip="1" x="-396" labelrot="0" y="-308" valLabely="0" objectName="Node-22" id="Node-22" rotation="0" valLabRot="0" labelx="-16" Show_id="false" valLabelx="0"/>
+ 
+Node-17: 
+<item labely="-24" vflip="1" itemtype="Node" hflip="1" x="-380" labelrot="0" y="-140" valLabely="0" objectName="Node-17" id="Node-17" rotation="0" valLabRot="0" labelx="-16" Show_id="false" valLabelx="0"/>
+ 
+Node-12: 
+<item labely="-24" vflip="1" itemtype="Node" hflip="1" x="-372" labelrot="0" y="-260" valLabely="0" objectName="Node-12" id="Node-12" rotation="0" valLabRot="0" labelx="-16" Show_id="false" valLabelx="0"/>
+ 
+Fixed Voltage-10: 
+<item Voltage="5" Show_Volt="true" valLabely="8" labelx="-64" x="-372" Show_id="false" vflip="1" hflip="1" rotation="90" id="Fixed Voltage-10" Unit=" V" itemtype="Fixed Voltage" labely="-24" y="-348" labelrot="0" valLabRot="0" objectName="Fixed Voltage-10" valLabelx="-16"/>
+ 
+Ground-9: 
+<item labely="8" vflip="1" itemtype="Ground" hflip="1" x="-380" labelrot="0" y="-100" valLabely="0" objectName="Ground-9" id="Ground-9" rotation="0" valLabRot="0" labelx="-16" Show_id="false" valLabelx="0"/>
+ 
+74HC595-8: 
+<item labely="-20" vflip="1" itemtype="Subcircuit" hflip="1" x="-352" labelrot="0" y="-324" valLabely="0" objectName="74HC595-8" Logic_Symbol="true" id="74HC595-8" rotation="0" valLabRot="0" labelx="0" Show_id="true" valLabelx="0"/>
+ 
+74HC595-7: 
+<item labely="-20" vflip="1" itemtype="Subcircuit" hflip="1" x="-352" labelrot="0" y="-212" valLabely="0" objectName="74HC595-7" Logic_Symbol="true" id="74HC595-7" rotation="0" valLabRot="0" labelx="0" Show_id="true" valLabelx="0"/>
+ 
+Seven Segment-4: 
+<item MaxCurrent="0.02" valLabely="0" labelx="20" CommonCathode="false" x="-244" Show_id="false" Vertical_Pins="false" NumDisplays="4" Threshold="2.3999999999999999" vflip="1" hflip="1" Color="0" rotation="0" id="Seven Segment-4" itemtype="Seven Segment" Resistance="1" labely="-44" y="-284" labelrot="0" valLabRot="0" objectName="Seven Segment-4" valLabelx="0"/>
+ 
+atmega328-1: 
+<item Program="" valLabely="0" labelx="0" Logic_Symbol="false" Mhz="16" x="-484" Show_id="true" eeprom="" Init_gdb="false" vflip="1" hflip="1" rotation="0" id="atmega328-1" Auto_Load="false" itemtype="AVR" labely="-20" y="-252" labelrot="0" valLabRot="0" objectName="atmega328-1" valLabelx="0"/>
+ 
+Connector-11: 
+<item pointList="-372,-332,-372,-260" startpinid="Fixed Voltage-10-outnod" valLabely="0" labelx="-16" x="-372" Show_id="false" endpinid="Node-12-0" vflip="1" hflip="1" rotation="0" id="Connector-11" enodeid="enode-14" itemtype="Connector" labely="-24" y="-332" labelrot="0" valLabRot="0" objectName="Connector-11" valLabelx="0"/>
+ 
+Connector-13: 
+<item pointList="-372,-260,-360,-260" startpinid="Node-12-2" valLabely="0" labelx="-16" x="-372" Show_id="false" endpinid="74HC595-8-!MR" vflip="1" hflip="1" rotation="0" id="Connector-13" enodeid="enode-14" itemtype="Connector" labely="-24" y="-260" labelrot="0" valLabRot="0" objectName="Connector-13" valLabelx="0"/>
+ 
+Connector-14: 
+<item pointList="-372,-260,-372,-148,-360,-148" startpinid="Node-12-1" valLabely="0" labelx="-16" x="-372" Show_id="false" endpinid="74HC595-7-!MR" vflip="1" hflip="1" rotation="0" id="Connector-14" enodeid="enode-14" itemtype="Connector" labely="-24" y="-260" labelrot="0" valLabRot="0" objectName="Connector-14" valLabelx="0"/>
+ 
+Connector-15: 
+<item pointList="-380,-116,-380,-140" startpinid="Ground-9-Gnd" valLabely="0" labelx="-16" x="-380" Show_id="false" endpinid="Node-17-0" vflip="1" hflip="1" rotation="0" id="Connector-15" enodeid="enode-16" itemtype="Connector" labely="-24" y="-116" labelrot="0" valLabRot="0" objectName="Connector-15" valLabelx="0"/>
+ 
+Connector-16: 
+<item pointList="-360,-140,-380,-140" startpinid="74HC595-7-!OE" valLabely="0" labelx="-16" x="-360" Show_id="false" endpinid="Node-17-1" vflip="1" hflip="1" rotation="0" id="Connector-16" enodeid="enode-16" itemtype="Connector" labely="-24" y="-140" labelrot="0" valLabRot="0" objectName="Connector-16" valLabelx="0"/>
+ 
+Connector-18: 
+<item pointList="-380,-140,-380,-252,-360,-252" startpinid="Node-17-2" valLabely="0" labelx="-16" x="-380" Show_id="false" endpinid="74HC595-8-!OE" vflip="1" hflip="1" rotation="0" id="Connector-18" enodeid="enode-16" itemtype="Connector" labely="-24" y="-140" labelrot="0" valLabRot="0" objectName="Connector-18" valLabelx="0"/>
+ 
+Connector-19: 
+<item pointList="-360,-284,-388,-284,-388,-228,-292,-228,-292,-204,-304,-204" startpinid="74HC595-8-DS" valLabely="0" labelx="-16" x="-360" Show_id="false" endpinid="74HC595-7-Q7'" vflip="1" hflip="1" rotation="0" id="Connector-19" enodeid="enode-19" itemtype="Connector" labely="-24" y="-284" labelrot="0" valLabRot="0" objectName="Connector-19" valLabelx="0"/>
+ 
+Connector-20: 
+<item pointList="-492,-204,-508,-204,-508,-308,-396,-308" startpinid="atmega328-1-PD4" valLabely="0" labelx="-16" x="-492" Show_id="false" endpinid="Node-22-0" vflip="1" hflip="1" rotation="0" id="Connector-20" enodeid="enode-21" itemtype="Connector" labely="-24" y="-204" labelrot="0" valLabRot="0" objectName="Connector-20" valLabelx="0"/>
+ 
+Connector-21: 
+<item pointList="-360,-196,-396,-196,-396,-308" startpinid="74HC595-7-STC" valLabely="0" labelx="-16" x="-360" Show_id="false" endpinid="Node-22-1" vflip="1" hflip="1" rotation="0" id="Connector-21" enodeid="enode-21" itemtype="Connector" labely="-24" y="-196" labelrot="0" valLabRot="0" objectName="Connector-21" valLabelx="0"/>
+ 
+Connector-23: 
+<item pointList="-396,-308,-360,-308" startpinid="Node-22-2" valLabely="0" labelx="-16" x="-396" Show_id="false" endpinid="74HC595-8-STC" vflip="1" hflip="1" rotation="0" id="Connector-23" enodeid="enode-21" itemtype="Connector" labely="-24" y="-308" labelrot="0" valLabRot="0" objectName="Connector-23" valLabelx="0"/>
+ 
+Connector-24: 
+<item pointList="-360,-316,-404,-316" startpinid="74HC595-8-SHC" valLabely="0" labelx="-16" x="-360" Show_id="false" endpinid="Node-30-0" vflip="1" hflip="1" rotation="0" id="Connector-24" enodeid="enode-29" itemtype="Connector" labely="-24" y="-316" labelrot="0" valLabRot="0" objectName="Connector-24" valLabelx="0"/>
+ 
+Connector-25: 
+<item pointList="-492,-140,-492,-140" startpinid="atmega328-1-PB0" valLabely="0" labelx="-16" x="-492" Show_id="false" endpinid="Node-26-0" vflip="1" hflip="1" rotation="0" id="Connector-25" enodeid="enode-28" itemtype="Connector" labely="-24" y="-140" labelrot="0" valLabRot="0" objectName="Connector-25" valLabelx="0"/>
+ 
+Connector-27: 
+<item pointList="-492,-140,-492,-140" startpinid="Node-26-2" valLabely="0" labelx="-16" x="-492" Show_id="false" endpinid="atmega328-1-PB0" vflip="1" hflip="1" rotation="0" id="Connector-27" enodeid="enode-28" itemtype="Connector" labely="-24" y="-140" labelrot="0" valLabRot="0" objectName="Connector-27" valLabelx="0"/>
+ 
+Connector-28: 
+<item pointList="-492,-140,-508,-140,-508,-124,-396,-124,-396,-172,-360,-172" startpinid="Node-26-1" valLabely="0" labelx="-16" x="-492" Show_id="false" endpinid="74HC595-7-DS" vflip="1" hflip="1" rotation="0" id="Connector-28" enodeid="enode-28" itemtype="Connector" labely="-24" y="-140" labelrot="0" valLabRot="0" objectName="Connector-28" valLabelx="0"/>
+ 
+Connector-29: 
+<item pointList="-360,-204,-404,-204,-404,-316" startpinid="74HC595-7-SHC" valLabely="0" labelx="-16" x="-360" Show_id="false" endpinid="Node-30-1" vflip="1" hflip="1" rotation="0" id="Connector-29" enodeid="enode-29" itemtype="Connector" labely="-24" y="-204" labelrot="0" valLabRot="0" objectName="Connector-29" valLabelx="0"/>
+ 
+Connector-31: 
+<item pointList="-404,-316,-516,-316,-516,-148,-492,-148" startpinid="Node-30-2" valLabely="0" labelx="-16" x="-404" Show_id="false" endpinid="atmega328-1-PD7" vflip="1" hflip="1" rotation="0" id="Connector-31" enodeid="enode-29" itemtype="Connector" labely="-24" y="-316" labelrot="0" valLabRot="0" objectName="Connector-31" valLabelx="0"/>
+ 
+Connector-32: 
+<item pointList="-304,-308,-268,-308" startpinid="74HC595-8-Q0" valLabely="0" labelx="-16" x="-304" Show_id="false" endpinid="Seven Segment-4-pin_a" vflip="1" hflip="1" rotation="0" id="Connector-32" enodeid="enode-32" itemtype="Connector" labely="-24" y="-308" labelrot="0" valLabRot="0" objectName="Connector-32" valLabelx="0"/>
+ 
+Connector-33: 
+<item pointList="-268,-300,-304,-300" startpinid="Seven Segment-4-pin_b" valLabely="0" labelx="-16" x="-268" Show_id="false" endpinid="74HC595-8-Q1" vflip="1" hflip="1" rotation="0" id="Connector-33" enodeid="enode-33" itemtype="Connector" labely="-24" y="-300" labelrot="0" valLabRot="0" objectName="Connector-33" valLabelx="0"/>
+ 
+Connector-34: 
+<item pointList="-304,-292,-268,-292" startpinid="74HC595-8-Q2" valLabely="0" labelx="-16" x="-304" Show_id="false" endpinid="Seven Segment-4-pin_c" vflip="1" hflip="1" rotation="0" id="Connector-34" enodeid="enode-34" itemtype="Connector" labely="-24" y="-292" labelrot="0" valLabRot="0" objectName="Connector-34" valLabelx="0"/>
+ 
+Connector-35: 
+<item pointList="-268,-284,-304,-284" startpinid="Seven Segment-4-pin_d" valLabely="0" labelx="-16" x="-268" Show_id="false" endpinid="74HC595-8-Q3" vflip="1" hflip="1" rotation="0" id="Connector-35" enodeid="enode-35" itemtype="Connector" labely="-24" y="-284" labelrot="0" valLabRot="0" objectName="Connector-35" valLabelx="0"/>
+ 
+Connector-36: 
+<item pointList="-304,-276,-268,-276" startpinid="74HC595-8-Q4" valLabely="0" labelx="-16" x="-304" Show_id="false" endpinid="Seven Segment-4-pin_e" vflip="1" hflip="1" rotation="0" id="Connector-36" enodeid="enode-36" itemtype="Connector" labely="-24" y="-276" labelrot="0" valLabRot="0" objectName="Connector-36" valLabelx="0"/>
+ 
+Connector-37: 
+<item pointList="-268,-268,-304,-268" startpinid="Seven Segment-4-pin_f" valLabely="0" labelx="-16" x="-268" Show_id="false" endpinid="74HC595-8-Q5" vflip="1" hflip="1" rotation="0" id="Connector-37" enodeid="enode-37" itemtype="Connector" labely="-24" y="-268" labelrot="0" valLabRot="0" objectName="Connector-37" valLabelx="0"/>
+ 
+Connector-38: 
+<item pointList="-304,-260,-268,-260" startpinid="74HC595-8-Q6" valLabely="0" labelx="-16" x="-304" Show_id="false" endpinid="Seven Segment-4-pin_g" vflip="1" hflip="1" rotation="0" id="Connector-38" enodeid="enode-38" itemtype="Connector" labely="-24" y="-260" labelrot="0" valLabRot="0" objectName="Connector-38" valLabelx="0"/>
+ 
+Connector-39: 
+<item pointList="-304,-252,-252,-252" startpinid="74HC595-8-Q7" valLabely="0" labelx="-16" x="-304" Show_id="false" endpinid="Seven Segment-4-pin_dot" vflip="1" hflip="1" rotation="0" id="Connector-39" enodeid="enode-39" itemtype="Connector" labely="-24" y="-252" labelrot="0" valLabRot="0" objectName="Connector-39" valLabelx="0"/>
+ 
+Connector-40: 
+<item pointList="-304,-196,-236,-196,-236,-252" startpinid="74HC595-7-Q0" valLabely="0" labelx="-16" x="-304" Show_id="false" endpinid="Seven Segment-4-pin_commona" vflip="1" hflip="1" rotation="0" id="Connector-40" enodeid="enode-40" itemtype="Connector" labely="-24" y="-196" labelrot="0" valLabRot="0" objectName="Connector-40" valLabelx="0"/>
+ 
+Connector-41: 
+<item pointList="-204,-252,-204,-188,-304,-188" startpinid="Seven Segment-4-pin_commonb" valLabely="0" labelx="-16" x="-204" Show_id="false" endpinid="74HC595-7-Q1" vflip="1" hflip="1" rotation="0" id="Connector-41" enodeid="enode-41" itemtype="Connector" labely="-24" y="-252" labelrot="0" valLabRot="0" objectName="Connector-41" valLabelx="0"/>
+ 
+Connector-42: 
+<item pointList="-304,-180,-172,-180,-172,-252" startpinid="74HC595-7-Q2" valLabely="0" labelx="-16" x="-304" Show_id="false" endpinid="Seven Segment-4-pin_commonc" vflip="1" hflip="1" rotation="0" id="Connector-42" enodeid="enode-42" itemtype="Connector" labely="-24" y="-180" labelrot="0" valLabRot="0" objectName="Connector-42" valLabelx="0"/>
+ 
+Connector-43: 
+<item pointList="-140,-252,-140,-172,-304,-172" startpinid="Seven Segment-4-pin_commond" valLabely="0" labelx="-16" x="-140" Show_id="false" endpinid="74HC595-7-Q3" vflip="1" hflip="1" rotation="0" id="Connector-43" enodeid="enode-43" itemtype="Connector" labely="-24" y="-252" labelrot="0" valLabRot="0" objectName="Connector-43" valLabelx="0"/>
+ 
+PlotterWidget: 
+<item minimumWidth="200" sizePolicy="" sizeIncrement="" updatesEnabled="true" mouseTracking="false" minimumHeight="200" geometry="" statusTip="" childrenRect="" width="200" frameGeometry="" windowModality="0" windowModified="false" enabled="true" toolTip="" Scale="1" layoutDirection="0" childrenRegion="" rect="" minimumSize="" x="0" acceptDrops="false" isActiveWindow="true" height="200" y="0" cursor="" focusPolicy="0" minimized="false" pos="" modal="false" maximized="false" size="" accessibleName="" maximumHeight="200" windowFilePath="" minimumSizeHint="" baseSize="" itemtype="Plotter" whatsThis="" font="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" focus="false" windowIcon="" windowOpacity="1" frameSize="" MaxVolt="500" inputMethodHints="0" maximumSize="" MinVolt="-500" contextMenuPolicy="1" palette="" Tracks="1" locale="" fullScreen="false" objectName="PlotterWidget" windowTitle="" visible="false" toolTipDuration="-1" autoFillBackground="false" styleSheet="" sizeHint="" normalGeometry="" windowIconText="" maximumWidth="1000" accessibleDescription=""/>
+ 
+</circuit>
