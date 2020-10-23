@@ -35,7 +35,7 @@ int main(void)
 	TIM0_overflow_interrupt_enable();
     /* Configure 16-bit Timer/Counter1
      * Set prescaler and enable overflow interrupt */
-	TIM1_overflow_1s();
+	TIM1_overflow_262ms();
 	TIM1_overflow_interrupt_enable();
 	
     // Enables interrupts by setting the global interrupt mask
@@ -54,7 +54,7 @@ int main(void)
 /* Interrupt service routines ----------------------------------------*/
 
 /**
- * ISR starts when Timer/Counter0 overflows. Display value on SSD
+ * ISR starts when Timer/Counter0 overflows. Display snake on SSD
  */
 ISR(TIMER0_OVF_vect)
 {
@@ -78,14 +78,26 @@ ISR(TIMER0_OVF_vect)
  */
 ISR(TIMER1_OVF_vect)
 {
-	singles++;
-	if(singles > 9)
+	if(decimals == 0)
 	{
-		singles = 0;
-		decimals++;
-		if(decimals > 5)
+		singles++;
+		if(singles > 4)
 		{
-			decimals = 0;
+			singles = 0;
+			decimals = 4;
 		}
-	}	
+	}
+	else if(decimals > 3)
+	{
+		decimals++;
+		if (decimals > 6)
+		{
+			decimals = 1;
+		}
+	}
+	else if(decimals == 1)
+	{
+		decimals = 0;
+		singles = 1;
+	}
 }
