@@ -1,0 +1,51 @@
+<circuit noLinAcc="5" speed="1000000" animate="0" reactStep="50" type="simulide_0.4">
+ 
+AudioOut-24: 
+<item x="372" labelx="-20" labely="-36" id="AudioOut-24" Impedance="8" itemtype="AudioOut" valLabelx="0" labelrot="0" valLabely="0" objectName="AudioOut-24" y="204" hflip="1" valLabRot="0" Buzzer="false" rotation="0" vflip="1" Show_id="false"/>
+ 
+LedBar-23: 
+<item valLabely="0" valLabRot="0" y="196" objectName="LedBar-23" rotation="0" Resistance="0.59999999999999998" labely="-44" Show_id="false" Threshold="2.3999999999999999" x="236" MaxCurrent="0.029999999999999999" Color="0" valLabelx="0" labelx="-16" id="LedBar-23" Size="8" Grounded="false" itemtype="LedBar" labelrot="0" hflip="1" vflip="1"/>
+ 
+LedBar-22: 
+<item valLabely="0" valLabRot="0" y="196" objectName="LedBar-22" rotation="0" Resistance="0.59999999999999998" labely="-44" Show_id="false" Threshold="2.3999999999999999" x="140" MaxCurrent="0.029999999999999999" Color="0" valLabelx="0" labelx="-16" id="LedBar-22" Size="8" Grounded="false" itemtype="LedBar" labelrot="0" hflip="1" vflip="1"/>
+ 
+LedBar-21: 
+<item valLabely="0" valLabRot="0" y="196" objectName="LedBar-21" rotation="0" Resistance="0.59999999999999998" labely="-44" Show_id="false" Threshold="2.3999999999999999" x="44" MaxCurrent="0.029999999999999999" Color="0" valLabelx="0" labelx="-16" id="LedBar-21" Size="8" Grounded="false" itemtype="LedBar" labelrot="0" hflip="1" vflip="1"/>
+ 
+Hd44780-19: 
+<item x="-252" labelx="70" labely="-82" id="Hd44780-19" Rows="2" Cols="16" itemtype="Hd44780" valLabelx="0" labelrot="0" valLabely="0" objectName="Hd44780-19" y="236" hflip="1" valLabRot="0" rotation="0" vflip="1" Show_id="true"/>
+ 
+Rail-15: 
+<item valLabely="8" valLabRot="0" y="-332" objectName="Rail-15" rotation="-270" labely="-24" Show_id="false" Voltage="5" x="732" Unit=" V" valLabelx="-16" labelx="-16" id="Rail-15" itemtype="Rail" labelrot="0" Show_Volt="true" hflip="1" vflip="1"/>
+ 
+SR04-12: 
+<item x="412" labelx="-16" labely="-48" id="SR04-1" itemtype="SR04" valLabelx="0" labelrot="0" valLabely="0" objectName="SR04-12" y="-276" hflip="1" valLabRot="0" rotation="0" vflip="1" Show_id="false"/>
+ 
+Voltage Source-11: 
+<item valLabely="10" valLabRot="0" y="-300" objectName="Voltage Source-11" rotation="0" labely="-80" Show_id="false" Voltage="5" x="292" Unit=" V" valLabelx="-26" labelx="-40" id="Voltage Source-5" itemtype="Voltage Source" labelrot="0" Show_Volt="true" hflip="1" vflip="1"/>
+ 
+SR04-8: 
+<item x="132" labelx="-16" labely="-48" id="SR04-1" itemtype="SR04" valLabelx="0" labelrot="0" valLabely="0" objectName="SR04-8" y="-276" hflip="1" valLabRot="0" rotation="0" vflip="1" Show_id="false"/>
+ 
+Voltage Source-7: 
+<item valLabely="10" valLabRot="0" y="-300" objectName="Voltage Source-7" rotation="0" labely="-80" Show_id="false" Voltage="5" x="12" Unit=" V" valLabelx="-26" labelx="-40" id="Voltage Source-5" itemtype="Voltage Source" labelrot="0" Show_Volt="true" hflip="1" vflip="1"/>
+ 
+Voltage Source-5: 
+<item valLabely="10" valLabRot="0" y="-300" objectName="Voltage Source-5" rotation="0" labely="-80" Show_id="false" Voltage="5" x="-268" Unit=" V" valLabelx="-26" labelx="-40" id="Voltage Source-5" itemtype="Voltage Source" labelrot="0" Show_Volt="true" hflip="1" vflip="1"/>
+ 
+SR04-2: 
+<item x="-148" labelx="-16" labely="-48" id="SR04-1" itemtype="SR04" valLabelx="0" labelrot="0" valLabely="0" objectName="SR04-2" y="-276" hflip="1" valLabRot="0" rotation="0" vflip="1" Show_id="false"/>
+ 
+Connector-6: 
+<item startpinid="SR04-2-inpin" valLabely="0" valLabRot="0" y="-300" objectName="Connector-6" rotation="0" labely="-24" Show_id="false" enodeid="enode-6" x="-236" pointList="-236,-300,-252,-300" valLabelx="0" labelx="-16" id="Connector-6" itemtype="Connector" labelrot="0" hflip="1" vflip="1" endpinid="Voltage Source-5-outPin"/>
+ 
+Connector-9: 
+<item startpinid="SR04-8-inpin" valLabely="0" valLabRot="0" y="-300" objectName="Connector-9" rotation="0" labely="-24" Show_id="false" enodeid="Circ_eNode-10" x="44" pointList="44,-300,28,-300" valLabelx="0" labelx="-16" id="Connector-6" itemtype="Connector" labelrot="0" hflip="1" vflip="1" endpinid="Voltage Source-7-outPin"/>
+ 
+Connector-13: 
+<item startpinid="SR04-12-inpin" valLabely="0" valLabRot="0" y="-300" objectName="Connector-13" rotation="0" labely="-24" Show_id="false" enodeid="Circ_eNode-14" x="324" pointList="324,-300,308,-300" valLabelx="0" labelx="-16" id="Connector-6" itemtype="Connector" labelrot="0" hflip="1" vflip="1" endpinid="Voltage Source-11-outPin"/>
+ 
+PlotterWidget-3: 
+<item sizeIncrement="" geometry="" mouseTracking="false" enabled="true" styleSheet="" palette="" height="200" autoFillBackground="false" windowIcon="" locale="" inputMethodHints="0" font="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" size="" objectName="PlotterWidget-3" windowTitle="" toolTipDuration="-1" minimumSize="" updatesEnabled="true" MinVolt="-500" maximumSize="" frameGeometry="" sizeHint="" rect="" statusTip="" accessibleName="" accessibleDescription="" windowFilePath="" fullScreen="false" width="200" MaxVolt="500" minimized="false" baseSize="" childrenRegion="" layoutDirection="0" cursor="" pos="" contextMenuPolicy="1" Tracks="1" Scale="1" focus="false" x="0" modal="false" acceptDrops="false" whatsThis="" minimumHeight="200" toolTip="" itemtype="Plotter" minimumSizeHint="" maximized="false" windowOpacity="1" normalGeometry="" windowIconText="" windowModified="false" focusPolicy="0" y="0" windowModality="0" visible="false" maximumHeight="200" minimumWidth="200" frameSize="" maximumWidth="1000" isActiveWindow="true" sizePolicy="" childrenRect=""/>
+ 
+</circuit>
