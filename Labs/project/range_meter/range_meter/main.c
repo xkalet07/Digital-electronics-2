@@ -431,7 +431,6 @@ ISR(INT0_vect)
 			}
 		}
 	}
-	us_counter = 0;			// set counter to 0 for the next measuring
 }
 
 
