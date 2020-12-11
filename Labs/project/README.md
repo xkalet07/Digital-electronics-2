@@ -50,6 +50,7 @@ Application works as it was intended and after some improvements it could maybe 
 * Using for user more pleasable sound signalizing with different frequencies.
 * Implementing LED bars for all sensors controlled with I2C or parralel by enabling cathodes of just one of them.
 * Decreasing the delay between measurings.
+
 Also using just one interrupt pin allows using even more sensors, whitch can be used for better sensoring soroundings of the car. But in this casse number of sensors is limited by increased time to do all range measures. 
 
 
