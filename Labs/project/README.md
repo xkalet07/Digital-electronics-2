@@ -40,10 +40,10 @@ LED bar is conected in parallel to PC port and PD0 pin of the MCU. All LEDs of t
 
 Animation shows working Range meter measuring distance with all 3 sensors siulated in SimulIDE. Minimal and maximal HC-SR04 range are also shown.
 
-![SimulIDE animation](pictures/SimulIDE-0.4.13-SR5  -  project_SIM_backup.simu 2020-12-11 09-58-28.mp4)
+![SimulIDE animation](pictures/SimulIDE.mp4)
 
 ## References
 
-1. Tomáš Frýza, **Digital electronics 2 - GitHub repository**: [https://github.com/tomas-fryza/Digital-electronics-2](https://github.com/tomas-fryza/Digital-electronics-2)
-2. Peter Fleury, **AVR-GCC libraries**: [http://www.peterfleury.epizy.com/avr-software.html](http://www.peterfleury.epizy.com/avr-software.html)
-3. Elec Freaks, **Ultrasonic Ranging Module HC - SR04 **: [https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf](https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf)
+1. Tomáš Frýza, *Digital electronics 2 - GitHub repository*: [https://github.com/tomas-fryza/Digital-electronics-2](https://github.com/tomas-fryza/Digital-electronics-2)
+2. Peter Fleury, *AVR-GCC libraries*: [http://www.peterfleury.epizy.com/avr-software.html](http://www.peterfleury.epizy.com/avr-software.html)
+3. Elec Freaks, *Ultrasonic Ranging Module HC SR04*: [https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf](https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf)
