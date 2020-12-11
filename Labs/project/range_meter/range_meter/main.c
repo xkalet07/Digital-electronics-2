@@ -1,10 +1,11 @@
 /***********************************************************************
  * range_meter.c - Paring assistant
  *
- * Measuring the range of objects behind car using 3 sensors HC-SR04
+ * Measuring the range of obstacles behind car using 3 sensors HC-SR04
  *
  * Created: 18.11.2020 12:37:41
  * Author : Lukas Kaleta
+ * 
  ***********************************************************************/ 
 
 
