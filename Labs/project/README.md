@@ -24,7 +24,7 @@ Purpose of aplication is to work as a rear parking sensor assistant. Design cont
 
 State diagram of the application is following:
 
-![Application state diagram](pictures/state_diagram.png)
+![Application state diagram](pictures/state_diagram.jpg)
 
 
 Main code can be found in the submited [reopsitory](https://github.com/xkalet07/Digital-electronics-2/tree/master/Labs/project). Here is a short description:
