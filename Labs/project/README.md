@@ -18,6 +18,7 @@ Create an parking assistant aplication using several ultrasonic sensors HC-SR04.
 
 Purpose of aplication is to work as a rear parking sensor assistant. Design contains 3 sensors HC-SR04 intended for measuring distance of obstacles in 3 ways at the rear side of a car (Middle, left and right). Distance is shown on 4 line LCD display in cm. Sound signalization is beeping inhas 4 levels dependent on the closest of dictances. LED bar is also implemented and shows 9 levels logarytmicaly dependent on the distance of the middle sensor.
 
+![SimulIDE hardware implementation](pictures/SIMUL_SCREEN.png)
 
 ## Code description
 
@@ -39,6 +40,7 @@ LED bar is conected in parallel to PC port and PD0 pin of the MCU. All LEDs of t
 
 Animation shows working Range meter measuring distance with all 3 sensors siulated in SimulIDE. Minimal and maximal HC-SR04 range are also shown.
 
+![SimulIDE animation](pictures/SimulIDE-0.4.13-SR5  -  project_SIM_backup.simu 2020-12-11 09-58-28.mp4)
 
 ## References
 
