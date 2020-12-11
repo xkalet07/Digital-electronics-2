@@ -3,7 +3,9 @@
 ### Team members
 
 Name: Lukáš Kaleta
+
 ID: xkalet07
+
 [Link to my GitHub project folder](https://github.com/xkalet07/Digital-electronics-2/tree/master/Labs/project)
 
 
@@ -20,13 +22,17 @@ Purpose of aplication is to work as a rear parking sensor assistant. Design cont
 ## Code description
 
 Main code can be found in the submited [reopsitory](https://github.com/xkalet07/Digital-electronics-2/tree/master/Labs/project). Here is a short description:
-	Timer/counter1 is used for switching to one of the 3 sensors every 262 ms and sending an 10us trigger pulse from corresponding pin to the trigger pin of current sensor. The three echo pins of sensors shares one interrupt pin INT0 of MCU. INT0 runs interrupt sequence function that uses an while loop to measure the lenght of the echo pulse. Then the distance is calculated and written to both LCD and UART for corresponding sensor. Two more special states of distance are added. These are the "To close to the sensor!" state triggered when the minnimum range of HC-SR04 is surpassed and "No obstacle in the way", which means that the obstacle is out of sensors range.
-	Timer/counter2 is used for generating the sound frequency by toggling the sound output PB5 pin 1 and 0. When the distance of all three sensors is more than 200 cm PB5 isn't toggled and no sound is generated. Under 200 cm the sound is generated and frequency is changing by setting timer/counter2 owerflow to: 
-		 - 2 ms when lowest distance < or = 200 cm
-		 - 1 ms when lowest distance < or = 70 cm
-		 - 512 us for lowest distance < or = 30 cm
-	Sound is also switchong between enabled and disabled every time Timer/counter1 owerflows, which changes continuous sound to beeping.
-	LED bar is conected in parallel to PC port and PD0 pin of the MCU. All LEDs of the LED bar are defaultly turned off when distance of the rear middle sensor is out of 400cm range. But when the distance gets lower than 400 cm first LED is lit. Then one more of eight LEDs is lit by surpasing 300, 225, 160, 110, 70, 40 and 15 cm with decreasing distance. For distance lower than 15 cm is all LED bar lit.
+
+Timer/counter1 is used for switching to one of the 3 sensors every 262 ms and sending an 10us trigger pulse from corresponding pin to the trigger pin of current sensor. The three echo pins of sensors shares one interrupt pin INT0 of MCU. INT0 runs interrupt sequence function that uses an while loop to measure the lenght of the echo pulse. Then the distance is calculated and written to both LCD and UART for corresponding sensor. Two more special states of distance are added. These are the "To close to the sensor!" state triggered when the minnimum range of HC-SR04 is surpassed and "No obstacle in the way", which means that the obstacle is out of sensors range.
+
+Timer/counter2 is used for generating the sound frequency by toggling the sound output PB5 pin 1 and 0. When the distance of all three sensors is more than 200 cm PB5 isn't toggled and no sound is generated. Under 200 cm the sound is generated and frequency is changing by setting timer/counter2 owerflow to: 
+		* 2 ms when lowest distance < or = 200 cm
+		* 1 ms when lowest distance < or = 70 cm
+		* 512 us for lowest distance < or = 30 cm
+
+Sound is also switchong between enabled and disabled every time Timer/counter1 owerflows, which changes continuous sound to beeping.
+
+LED bar is conected in parallel to PC port and PD0 pin of the MCU. All LEDs of the LED bar are defaultly turned off when distance of the rear middle sensor is out of 400cm range. But when the distance gets lower than 400 cm first LED is lit. Then one more of eight LEDs is lit by surpasing 300, 225, 160, 110, 70, 40 and 15 cm with decreasing distance. For distance lower than 15 cm is all LED bar lit.
 
 
 ## Animation of SimulIDE
